@@ -1,81 +1,46 @@
 # Streamlit Tutorials
 
-#### Install
+>Streamlit은 머신러닝과 데이터사이언스를 위한 웹 앱을 구축하기 위한 오픈소스 파이썬 프레임워크로, 빠르게 웹 앱을 개발하고 쉽게 배포할 수 있습니다. Streamlit을 통해 파이썬 코드를 작성하는 것과 동일한 방식으로 앱을 작성할 수 있어 코딩과 웹 앱에서의 결과를 확인하는 대화형 루프 작업을 원활하게 만들어 줍니다.
+>본 예제를 통해 Streamlit의 UI 컴포넌트 별 사용 방법 및 예제를 확인할 수 있습니다.
+
+#### 설치
 ```
 pip install streamlit
 ```
 
-#### Run
+#### 실행
 ```
-cd [directory]
+cd [dir]
 streamlit run app.py --server.address 0.0.0.0 --server.port [your port]
-# http://0.0.0.0:[your port]
+#server.address 및 port를 지정하지 않는 경우, localhost:8501로 실행
 ```
-## Main App
-```
-# run
-streamlit run app.py --server.address 0.0.0.0 --server.port [your port]
-```
+####
 
 <p align="center">
-    <img src='asset/main.gif?raw=1' width = '900' >
+    <img src='asset/ref1.png' width = '900' >
 </p>
 
-## 💸 Stock Price Dashboard ✨
-
-```
-# install
-pip install yfinance fbprophet plotly
-
-# run
-cd stock-price-dashboard
-streamlit run app.py --server.address 0.0.0.0 --server.port [your port]
-```
+####
 
 <p align="center">
-    <img src='asset/finance.gif?raw=1' width = '900' >
+    <img src='asset/ref2.png' width = '900' >
 </p>
 
-## 🙃 Cartoon StyleGAN ✨
-
-- [`happy-jihye/Cartoon-StyleGAN`](https://github.com/happy-jihye/Cartoon-StyleGAN)
-
-```
-# install
-pip install bokeh ftfy regex tqdm gdown
-# for styleclip
-pip install git+https://github.com/openai/CLIP.git
-
-# run
-cd cartoon-stylegan
-streamlit run app.py --server.address 0.0.0.0 --server.port [your port]
-```
+####
 
 <p align="center">
-    <img src='asset/cartoon-stylegan-1.gif?raw=1' width = '700' >
+    <img src='asset/ref3.png' width = '900' >
 </p>
 
+####
 
-## 🖼️ VQGAN-CLIP ✨
+<p align="center">
+    <img src='asset/ref4.png' width = '900' >
+</p>
 
-```
-# install python packages
-pip install ftfy regex tqdm omegaconf pytorch-lightning IPython kornia imageio imageio-ffmpeg einops torch_optimizer
-
-# clone other repositories
-git clone 'https://github.com/openai/CLIP'
-git clone 'https://github.com/CompVis/taming-transformers'
-
-# download checkpoints
-mkdir checkpoints
-curl -L -o checkpoints/vqgan_imagenet_f16_16384.yaml -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&dl=1' #ImageNet 16384
-curl -L -o checkpoints/vqgan_imagenet_f16_16384.ckpt -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&dl=1' #ImageNet 16384
-
-# run
-cd VQGAN-CLIP
-streamlit run app.py --server.address 0.0.0.0 --server.port [your port]
-```
-
-
-<p align='center'><img src='asset/vqgan.gif?raw=1' width = '1100' ></p>
-
+##Streamlit API 참조
+**📒 Useful resource**
+- [`streamlit.io`](https://docs.streamlit.io/)
+- [`awesome-streamlit`](https://github.com/MarcSkovMadsen/awesome-streamlit)
+- [`streamlit gallery`](https://streamlit.io/gallery)
+''')

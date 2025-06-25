@@ -35,15 +35,8 @@ $ streamlit docs
 $ streamlit --version
     ''')
 
-    st.markdown('__Pre-release features__')
-    st.markdown('[Beta and experimental features](https://docs.streamlit.io/en/0.86.0/api.html#beta-and-experimental-features)')
-    st.code('''
-pip uninstall streamlit
-pip install streamlit-nightly --upgrade
-    ''')
-
     st.markdown('''
-<small>Summary of the [docs](https://docs.streamlit.io/en/stable/api.html), as of [Streamlit v0.86.0](https://www.streamlit.io/).</small>
+<small>API 문서 [docs](https://docs.streamlit.io/en/stable/api.html), [Streamlit v1.46.0](https://www.streamlit.io/).</small>
     ''', unsafe_allow_html=True)
 
 
@@ -51,7 +44,7 @@ pip install streamlit-nightly --upgrade
 
     col1, col2 = st.columns(2)
 
-    col1.subheader('Magic commands')
+    col1.subheader('매직 커맨드')
     col1.code('''# Magic commands implicitly `st.write()`
 \'\'\' _This_ is some __Markdown__ \'\'\'
 a=3
@@ -60,7 +53,7 @@ a=3
 
     # Display text
 
-    col1.subheader('Display text')
+    col1.subheader('텍스트 표시')
     col1.code('''
 st.text('Fixed width text')
 st.markdown('_Markdown_') # see *
@@ -77,7 +70,7 @@ st.caption('This is a small text')
 
     # Display data
 
-    col1.subheader('Display data')
+    col1.subheader('데이터 표시')
     col1.code('''
 st.dataframe(my_dataframe)
 st.table(data.iloc[0:10])
@@ -86,7 +79,7 @@ st.json({'foo':'bar','fu':'ba'})
 
     # Display charts
 
-    col1.subheader('Display charts')
+    col1.subheader('챠트 표시')
     col1.code('''
 st.line_chart(data)
 st.area_chart(data)
@@ -104,7 +97,7 @@ st.map(data)
 
     # Display media
 
-    col1.subheader('Display media')
+    col1.subheader('미디어 표시')
     col1.code('''
 st.image('./header.png')
 st.audio(data)
@@ -113,7 +106,7 @@ st.video(data)
 
     # Display interactive widgets
 
-    col2.subheader('Display interactive widgets')
+    col2.subheader('위젯 표시')
     col2.code('''
 st.button('Hit me')
 st.checkbox('Check me out')
@@ -130,14 +123,14 @@ st.time_input('Time entry')
 st.file_uploader('File uploader')
 st.color_picker('Pick a color')
     ''')
-    col2.write('Use widgets\' returned values in variables:')
+    col2.write('변수에서 위젯의 반환값 사용:')
     col2.code('''
 >>> for i in range(int(st.number_input('Num:'))): foo()
 >>> if st.sidebar.selectbox('I:',['f']) == 'f': b()
 >>> my_slider_val = st.slider('Quinn Mallory', 1, 88)
 >>> st.write(slider_val)
     ''')
-    col2.write('Batch widgets together in a form:')
+    col2.write('form에서 배치 위젯 처리:')
     col2.code('''
 >>> with st.form(key='my_form'):
 >>> 	text_input = st.text_input(label='Enter some text')
@@ -146,14 +139,14 @@ st.color_picker('Pick a color')
 
     # Control flow
 
-    col2.subheader('Control flow')
+    col2.subheader('흐름 제어')
     col2.code('''
 st.stop()
     ''')
 
     # Lay out your app
 
-    col2.subheader('Lay out your app')
+    col2.subheader('앱 레이아웃')
     col2.code('''
 st.container()
 st.columns(spec)
@@ -167,7 +160,7 @@ st.expander('Expander')
 
     # Display code
 
-    col2.subheader('Display code')
+    col2.subheader('코드 표시')
     col2.code('''
 st.echo()
 >>> with st.echo():
@@ -176,7 +169,7 @@ st.echo()
 
     # Display progress and status
 
-    col1.subheader('Display progress and status')
+    col1.subheader('진행 상태 표시')
     col1.code('''
 st.progress(progress_variable_1_to_100)
 st.spinner()
@@ -193,7 +186,7 @@ st.exception(e)
 
     # Placeholders, help, and options
 
-    col2.subheader('Placeholders, help, and options')
+    col2.subheader('플레이스홀더, 헬프 및 옵션')
     col2.code('''
 st.empty()
 >>> my_placeholder = st.empty()
@@ -206,7 +199,7 @@ st.set_page_config(layout='wide')
 
     # Mutate data
 
-    col1.subheader('Mutate data')
+    col1.subheader('데이터 변형')
     col1.code('''
 DeltaGenerator.add_rows(data)
 >>> my_table = st.table(df1)
@@ -217,7 +210,7 @@ DeltaGenerator.add_rows(data)
 
     # Optimize performance
 
-    col2.subheader('Optimize performance')
+    col2.subheader('성능 최적화')
     col2.code('''
 @st.cache
 >>> @st.cache
@@ -233,7 +226,7 @@ DeltaGenerator.add_rows(data)
     ''')
 
     # Store data across reruns
-    col1.subheader('Store data across reruns')
+    col1.subheader('재실행 시 데이터 적재, 유지')
     col1.code('''
 st.title('Counter Example')
 if 'count' not in st.session_state:
@@ -256,99 +249,24 @@ def cs_sidebar():
 # ============================
 
 st.set_page_config(
-     page_title='Streamlit tutorial',
+     page_title='Streamlit 튜토리얼',
      #layout="wide",
      initial_sidebar_state="expanded",
 )
 
 
-st.title('Streamlit Tutorial')
+st.title('Streamlit 튜토리얼')
 st.markdown('')
 st.markdown('''
-- developped by [`@happy-jihye`](https://github.com/happy-jihye)
 - [`Github 💻 streamlit-tutorial`](https://github.com/happy-jihye/Streamlit-Tutorial)
 ''')
-st.info('Streamlit is an open-source python framework for building web apps for Machine Learning and Data Science. We can instantly develop web apps and deploy them easily using Streamlit. Streamlit allows you to write an app the same way you write a python code. Streamlit makes it seamless to work on the interactive loop of coding and viewing results in the web app.')
+st.info('Streamlit은 머신러닝과 데이터사이언스를 위한 웹 앱을 구축하기 위한 오픈소스 파이썬 프레임워크로, 빠르게 웹 앱을 개발하고 쉽게 배포할 수 있습니다. Streamlit을 통해 파이썬 코드를 작성하는 것과 동일한 방식으로 앱을 작성할 수 있어 코딩과 웹 앱에서의 결과를 확인하는 대화형 루프 작업을 원활하게 만들어 줍니다.')
 
-st.header('Streamlit Gallery 🖼️')
-
-with st.expander('Example 1'):
-    st.markdown('''
-## 💸 Stock Price Dashboard ✨
-
-```
-pip install yfinance fbprophet plotly
-```
-    ''')
-    st.video('./asset/finance.mp4')
-
-with st.expander('Example 2'):
-    st.markdown('''
-## 🙃 Cartoon StyleGAN ✨
-
-- [`happy-jihye/Cartoon-StyleGAN`](https://github.com/happy-jihye/Cartoon-StyleGAN)
-
-```
-pip install bokeh ftfy regex tqdm gdown
-
-# for styleclip
-pip install git+https://github.com/openai/CLIP.git
-```
-    ''')
-
-    st.video('./asset/cartoon-stylegan-1.mp4')
-with st.expander('Example 3'):
-    st.markdown('''
-## 🖼️ VQGAN-CLIP ✨
-
-
-```
-# install python packages
-pip install ftfy regex tqdm omegaconf pytorch-lightning IPython kornia imageio imageio-ffmpeg einops torch_optimizer
-
-# clone other repositories
-git clone 'https://github.com/openai/CLIP'
-git clone 'https://github.com/CompVis/taming-transformers'
-
-# download checkpoints
-mkdir checkpoints
-curl -L -o checkpoints/vqgan_imagenet_f16_16384.yaml -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&dl=1' #ImageNet 16384
-curl -L -o checkpoints/vqgan_imagenet_f16_16384.ckpt -C - 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&dl=1' #ImageNet 16384
-```
-    ''')
-
-    st.video('./asset/vqgan.mp4')
-
-st.markdown('---')
-st.header('Streamlit API reference')
-st.markdown('')
-st.markdown('''
-**📒 Useful resource**
-- [`streamlit.io`](https://docs.streamlit.io/)
-- [`awesome-streamlit`](https://github.com/MarcSkovMadsen/awesome-streamlit)
-- [`streamlit gallery`](https://streamlit.io/gallery)
-- [`Python Streamlit 사용법 - 프로토타입 만들기`](https://zzsza.github.io/mlops/2021/02/07/python-streamlit-dashboard/)
-
-''')
-
-
-
-
-st.code('import streamlit as st')
-
-with st.expander('Write'):
+with st.expander('타이틀'):
     st.title('title')
     st.header('header')
     st.subheader('subheader')
     st.write('write')
-
-
-    st.markdown('''
-    # title
-    ## header
-    ### subheader
-    write
-    ''')
     
     st.code('''
 st.title('title')
@@ -358,7 +276,7 @@ st.write('write')
 ''')
 
 
-with st.expander('Widget'):
+with st.expander('위젯'):
     st.button('button')
     st.checkbox('checkbox')
     st.slider('slider', min_value=0, max_value=10, value=3, step=1)
@@ -379,7 +297,13 @@ multiselect= st.multiselect('multiselect', ['a', 'b', 'c', 'd'])
 st.write(f'multiselect result: {multiselect}')
 ''')
 
-with st.expander('Input Data'):
+with st.expander('데이터 입력'):
+    st.text_input('텍스트')
+    st.text_input('비번', type="password")
+    st.number_input('숫자')
+    st.text_area('텍스트 에어리어')
+    st.date_input('날짜')
+    st.time_input('시간')
     st.code('''
 st.text_input(value)
 st.text_input(label, value, type="password")
@@ -401,3 +325,13 @@ st.warning('warning')
 st.success('success')
     ''')
 cs_body()
+
+st.markdown('---')
+st.header('Streamlit API reference')
+st.markdown('')
+st.markdown('''
+**📒 Useful resource**
+- [`streamlit.io`](https://docs.streamlit.io/)
+- [`awesome-streamlit`](https://github.com/MarcSkovMadsen/awesome-streamlit)
+- [`streamlit gallery`](https://streamlit.io/gallery)
+''')

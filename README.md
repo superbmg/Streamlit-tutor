@@ -43,4 +43,3 @@ streamlit run app.py --server.address 0.0.0.0 --server.port [your port]
 - [`streamlit.io`](https://docs.streamlit.io/)
 - [`awesome-streamlit`](https://github.com/MarcSkovMadsen/awesome-streamlit)
 - [`streamlit gallery`](https://streamlit.io/gallery)
-''')
